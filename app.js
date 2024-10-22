@@ -57,3 +57,10 @@
 // let/const cannot be acccessed with a window object.
 // let/const cannot be redclared.
  
+//-------> difference between var/let/const -------->
+//var is a global scoped when declared globally, function scoped when declared functionally.
+//let/const are local scoped.
+//var can be reassigned any value.
+//let/const cannot be reassigned.
+//var is hoisted. let/const are hoisted diiferently. (here temporal dead zone concept comes).
+//const cannot be declared without initialization.
