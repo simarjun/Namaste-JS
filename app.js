@@ -332,15 +332,140 @@
 //------>Callback Functions and Event Listeners ----->
 // JS is a syncronous and single threaded language deu to callback functions, we can do async things in JS.
 
-setTimeout(function() {
-    console.log("async funcs");
-}, 1000)
+// setTimeout(function() {
+//     console.log("async funcs");
+// }, 1000)
 
-function x(y) {
-    console.log("x");
-    y();
-}
+// function x(y) {
+//     console.log("x");
+//     y();
+// }
 
-x (function y() {
-    console.log("y");
-});
+// x (function y() {
+//     console.log("y");
+// });
+
+// adding button and onclick increasing the count.
+// document.getElementById("clickme").addEventListener("click", function() {
+//     console.log("button clicked.")
+// })
+
+// using a global variable here below...
+// let count = 0;
+// document.getElementById("clickme").addEventListener("click", function() {
+//     console.log("clicked button", ++count);
+// })
+
+
+// now using closure for data abstraction...
+// function attach() {
+//     let count = 0;
+//     document.getElementById("clickme").addEventListener("click", function() {
+//         console.log("button clicked", ++count);
+//     })
+// }
+// attach();
+
+
+//---------> Async JS and Event loop -------->
+// call stack will executes any execution context which enters it.
+// call stack has no timer.
+// browser has JS engine, which has call stack and both execution contexts.
+// browser got many superpowers too.
+// 1. local storage space (localstorage)
+// 2. timer (setTimeout)
+// 3. place to enter the URL. 
+// 4. bluetooth access.
+// 5. geolocation access.
+// 6. DOM APIs.
+// 7. console.
+// 8. fetch. (used to make connections with external servers)
+// JS connects call stack with these superpowers using web API's.
+
+// none of them are part of JS, but browser allows JS callstack to use it.
+
+// console.log("helllo1");
+// setTimeout(function ca() {
+//     console.log("hello 2");
+// }, 1000)
+// console.log("hello 3");
+
+// ------> Map, Filter and Reduce ------>
+// basically map function is mapping each and every value and transforming it based on given condition.
+
+// const arr = [1, 2, 3, 4, 5];
+// function double(x) {
+//     return x * 2;
+// }
+// const doubleArr = arr.map(double);
+// console.log(doubleArr);
+
+
+// Filter : filter function creates an array and store only values which are true;
+
+// function isOdd(x) {
+//     return x % 2;
+// }
+// const oddArr = arr.filter(isOdd);
+// console.log(oddArr);
+
+// Reduce : it is a fn which take all values of array and gives single output.
+// it reduces a array into single output.
+
+// function summ (arr) {
+//     let sum = 0;
+//     for (let i=0; i<arr.length; i++) {
+//         sum += arr[i];
+//     }
+//     return sum;
+// }
+
+// console.log(summ(arr));
+
+// const users = [
+//     { firstName: "Alok", lastName: "Raj", age: 23 },
+//     { firstName: "Ashish", lastName: "Kumar", age: 29 },
+//     { firstName: "Ankit", lastName: "Roy", age: 29 },
+//     { firstName: "Pranav", lastName: "Mukherjee", age: 50 },
+// ];
+
+// const fullName = users.map((user) => user.firstName + " " + user.lastName);
+// console.log(fullName);
+
+// applying reduce method to the above code
+// const report = users.reduce((acc, curr) => {
+//     if(acc[curr.age]) {
+//         acc[curr.age] = ++ acc[curr.age] ;
+//     } else {
+//         acc[curr.age] = 1;
+//     }
+//     return acc;  //to every time return update object
+// }, {})
+// console.log(report)
+
+// applying filter method to above code
+// const output = users
+//   .filter((user) => user.age < 30)
+//   .map((user) => user.firstName);
+// console.log(output);
+
+//below is the same logic applied using reduce.
+// const output = users.reduce((acc, curr) => {
+//     if (curr.age < 30) {
+//       acc.push(curr.firstName);
+//     }
+//     return acc;
+//   }, []);
+
+
+// --------> Callback ------->
+
+// 1: Good part : its imp while writing async fns in JS.
+// 2: Bad part : Callback Hell, Inversion of Control.
+
+// when we have large codebase and multiple apis ahaving dependency on each other. then we fall into callback hell. 
+// it becomes tough to maintain. its also called Pyramid of doom.
+
+// Note : async programming exists in JS bcoz callback Exists.
+
+// -------> Promises ------>
