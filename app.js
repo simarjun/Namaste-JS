@@ -509,3 +509,38 @@
 // console.log(dataPromise);
 // dataPromise.then(res=> console.log(res));
 
+// const p = new Promise((resolve, reject) => {
+//     resolve('Promise resolved value!!');
+// })
+  
+// function getData() {
+//   p.then(res => console.log(res));
+// }
+  
+// getData(); // Promise resolved value!!
+
+// async function handlePromise() {
+//     const value = await p;
+//     console.log(value);
+// }
+
+// handlePromise();
+
+// await is the keyword that can be used only inside a async function.
+// const p = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Promise resolved value!!');
+//     }, 3000);
+//   })
+
+// async function handlePromise() {
+//     console.log('Hi');
+//     const val = await p;
+//     console.log('Hello There!');
+//     console.log(val);
+  
+//     const val2 = await p;
+//     console.log('Hello There! 2');
+//     console.log(val2);
+//   }
+//   handlePromise(); 
