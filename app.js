@@ -469,3 +469,43 @@
 // Note : async programming exists in JS bcoz callback Exists.
 
 // -------> Promises ------>
+// console.log("promises started.");
+
+// Promises are used to handle async operations in JavaScript.
+// Promise is a empty object with some data value in it. this data value holds whatever the function returns.
+
+
+// const URL = "https://api.github.com/users/alok722";
+// const user = fetch(URL);
+// // console.log(user);
+// user.then(function(data) {
+//     console.log(data);
+// })
+
+// console.log("hello I am back");
+
+//-------> Async/Await ------->
+// async is a keyword used before a function to create a asunc function.
+
+// 💡 async function always returns a promise, even if I return a simple string from below function, async keyword will wrap it under Promise and then return.
+// async function getData() {
+//     return "Namaste JavaScript";
+//   }
+//   const dataPromise = getData();
+//   console.log(dataPromise); // Promise {<fulfilled>: 'Namaste JavaScript'}
+
+// to extract data from the above promise. one way is promise.then
+// dataPromise.then(res=>console.log(res));
+
+// const a = new Promise((resolve, reject)=>{
+//     resolve("resolved prmose successfully");
+// })
+
+// async function getData() {
+//     return a;
+// }
+
+// const dataPromise = getData();
+// console.log(dataPromise);
+// dataPromise.then(res=> console.log(res));
+
