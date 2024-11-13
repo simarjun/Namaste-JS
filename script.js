@@ -215,4 +215,114 @@
 
 //20: try-catch block to handle an error of API fetch
 
+// async function fetchData () {
+//     try{
+//         let response =await fetch("https://jsonplaceholder.typicode.com/posts");
+//         let data =await response.json();
+//         console.log(data);
+//     }
+//     catch(error) {
+//         console.log("error" + error);
+//     }
+// }
+
+// fetchData();
+
+
+//21: recursive function find factorial
+
+// function facto(n) {
+//     if (n === 1){
+//         return 1;
+//     }
+//      else {
+//         return n* (facto(n-1));
+//     }
+// }
+
+// console.log(facto(5));
+
+
+//22: recursive function finds the nth Fibonacci number
+
+// function nthFibNum (n) {
+//     if (n<=1) {
+//         return n;
+//     } else {
+//         return nthFibNum(n-1) + nthFibNum(n-2);
+//     }
+// }
+
+// console.log(nthFibNum(6));
+
+
+//23: counter function using closures that increments
+
+//   function createCounter () {
+//     let count = 0;
+//     return function () {
+//         return ++count;
+//     }
+//     return;
+//   }
+
+//   let result = createCounter();
+//   console.log(result());   //1
+//   console.log(result());   ///2
+
+
+//24: Implement a private variable using closures 
+
+//  function createCounter () {
+//     //private variable
+//     let count = 0;
+
+//     //inner function closures
+//     function increment () {
+//         count++;
+//         console.log(count);
+//     }
+
+//     return {
+//         increment: function() {
+//             increment();
+//         },
+//         getCount: function() {
+//             return count;
+//         }
+//     }
+//  }
+
+//  const counter = createCounter();
+//  counter.increment();
+//  counter.increment();
+//  counter.increment();
+
+//  console.log(counter.getCount());
+
+
+
+//25: Add method to Product Prototype
+
+//26: makes multiple API calls using callbacks
+
+// function makeAPICall (url, callback) {
+//     fetch(url).then(response =>response.json())
+//     .then(data => callback(data))
+//     .catch(err => console.error("eror dusing the api call: ", err.message))
+// }
+
+// function handleData (data) {
+//     console.log("processed data", data);
+// }
+
+// function main() {
+//     const apiURL1 = "https://jsonplaceholder.typicode.com/posts/1";
+//     const apiURL2 = "https://jsonplaceholder.typicode.com/posts/2";
+
+//     makeAPICall(apiURL1, handleData);
+//     makeAPICall(apiURL2, handleData);
+// }
+
+// main();
 
